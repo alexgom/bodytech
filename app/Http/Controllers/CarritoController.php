@@ -40,6 +40,14 @@ class CarritoController extends Controller
         return $carrito; 
 
     }
+
+    public function updateEstado(Request $request, $cliente_cedula){
+         $carrito = Carrito::where('cliente_identificacion','=',$cliente_cedula)->update(['estado'=> $request->estado]);
+        return response()->json([
+            'res' => true,
+            'message' => 'estado actualizado'
+        ],200);
+    }
    
     /**
      * Remove the specified resource from storage.

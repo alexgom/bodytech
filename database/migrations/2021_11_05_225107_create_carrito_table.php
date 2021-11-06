@@ -19,6 +19,7 @@ class CreateCarritoTable extends Migration
             $table->integer('valor_total');
             $table->integer('cantidad');
             $table->string('cliente_identificacion');
+            $table->string('estado');
             $table->foreign('producto_id')->references('id')->on('productos');
             $table->timestamps();
         });

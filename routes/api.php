@@ -32,8 +32,11 @@ Route::group(['middleware'=>'auth:api'], function(){
         Route::post('carrito','CarritoController@create')->name('addCarrito');
         Route::get('carrito/{id}','CarritoController@getProducto')->name('getCarrito');
         Route::get('carrito/delete/{id}','CarritoController@destroy')->name('deleteCarrito');
-
         Route::get('carrito/cliente/{cedulacliente}','CarritoController@getCarritoCliente')->name('getCarritoCliente');
+
+
 });
+
+ Route::post('productos/compra/{id}','CarritoController@updateEstado')->name('compraProductos');
 
 

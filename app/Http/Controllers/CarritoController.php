@@ -35,7 +35,11 @@ class CarritoController extends Controller
 
     }
 
-    
+     public function getCarritoCliente($cliente_cedula){
+        $carrito = Carrito::where('cliente_identificacion','=',$cliente_cedula)->get();
+        return $carrito; 
+
+    }
    
     /**
      * Remove the specified resource from storage.

@@ -59,7 +59,7 @@ class ProductoController extends Controller
     public function destroy($id)
     {
         $productos = $this->getProducto($id);
-        $productos->delete();   
+        $productos->delete();
         return $productos;  
     }
 }

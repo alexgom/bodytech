@@ -23,3 +23,8 @@ Route::post('productos','ProductoController@create')->name('addProductos');
 Route::get('productos/{id}','ProductoController@getProducto')->name('getProductos');
 Route::post('productos/{id}','ProductoController@update')->name('editProductos');
 Route::get('productos/delete/{id}','ProductoController@destroy')->name('deleteProductos');
+
+Route::get('carrito','CarritoController@index')->name('getAllCarrito');
+Route::post('carrito','CarritoController@create')->name('addCarrito');
+Route::get('carrito/{id}','CarritoController@getProducto')->name('getCarrito');
+Route::get('carrito/delete/{id}','CarritoController@destroy')->name('deleteCarrito');

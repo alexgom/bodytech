@@ -36,6 +36,16 @@ class ProductoController extends Controller
 
     }
 
+    public function importCSV(Request $request){
+        $file = $request->file('file');
+        Excel::import(new ProductoImport, $file);
+
+           return response()->json([
+            'res' => true,
+            'message' => 'Datos importados'    
+    }
+
+
     /**
      * Update the specified resource in storage.
      *
@@ -49,6 +59,9 @@ class ProductoController extends Controller
         $productos->fill($request->all())->save();
         return $productos;
     }
+
+
+
 
     /**
      * Remove the specified resource from storage.
